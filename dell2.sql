@@ -7,8 +7,9 @@ drop table projects;
 drop table users;
 drop table companies;
 
--- drop SEQUENCE projectSequence;
-DROP SEQUENCE projectSequence; 
+
+DROP SEQUENCE projectSequence;
+DROP SEQUENCE usersSequence;
 
 create table companies (
     companyname varchar(30),
@@ -48,6 +49,13 @@ create table media (
   primary key(projectid));
 
 CREATE SEQUENCE projectSequence
+  MINVALUE 1
+  MAXVALUE 999999999999999999999999999
+  START WITH 1000
+  INCREMENT BY 1
+  CACHE 20;
+
+CREATE SEQUENCE usersSequence
   MINVALUE 1
   MAXVALUE 999999999999999999999999999
   START WITH 1000

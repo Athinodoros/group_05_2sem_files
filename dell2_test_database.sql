@@ -7,8 +7,9 @@ drop table projects;
 drop table users;
 drop table companies;
 
--- drop SEQUENCE projectSequence;
-DROP SEQUENCE projectSequence; 
+
+DROP SEQUENCE projectSequence;
+DROP SEQUENCE usersSequence;
 
 create table companies (
     companyname varchar(30),
@@ -54,14 +55,11 @@ CREATE SEQUENCE projectSequence
   INCREMENT BY 1
   CACHE 20;
 
+CREATE SEQUENCE usersSequence
+  MINVALUE 1
+  MAXVALUE 999999999999999999999999999
+  START WITH 1000
+  INCREMENT BY 1
+  CACHE 20;
 
-Insert into companies values('Dellyrom',322321);
-Insert into users values(4,'pepinio','password','email@ema','Danmark','Manager','Dellyrom');
-Insert into projects values(4,4,'Del','2011-12-12','2014-12-12','Pornich',1324,'Yes','Full of shits');
-Insert into media values(4,4,'Filepath//LocalDiskCassdannn');
-
-INSERT INTO companies VALUES ('Dell', 10000);
-INSERT INTO companies VALUES ('El gigante', 3);
-INSERT INTO users VALUES (83,'Klaus','1234','klaus@dell.dk','Denmark','admin','Dell');
-INSERT INTO users VALUES (84, 'someReseller', '1234', 'res@elgig.dk', 'Denmark', 'reseller', 'El gigante');
 commit;
